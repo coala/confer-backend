@@ -12,6 +12,7 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+
 class Conference(models.Model):
     name = models.CharField(max_length=512, null=True, blank=True)
     source_url = models.CharField(max_length=512, null=True, blank=True)
