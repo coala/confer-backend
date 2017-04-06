@@ -24,7 +24,15 @@ SECRET_KEY = '((zim$6p#(5j!ey#ihwo985i8g*e&2qde!qd*+0j6+-edv)5s2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://confer.coala.io',
+    'https://confer.coala.io',
+    'confer.coala.io',
+    'http://coala.io',
+    'coala.io',
+    'localhost',
+    '127.0.0.1'
+]
 
 # Application definition
 
@@ -37,9 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'conferences',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -114,3 +124,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_WHITELIST = (
+    'http://confer.coala.io',
+    'https://confer.coala.io',
+    'confer.coala.io',
+    'http://coala.io',
+    'coala.io',
+    'localhost:8080'
+)
