@@ -136,5 +136,5 @@ CORS_ORIGIN_WHITELIST = (
 
 # GOOGLE API
 
-GOOGLE_API_BASE_URL = 'http://maps.googleapis.com'
-GOOGLE_GEOCODE_ENDPOINT = '{base_url}/maps/api/geocode/'.format(base_url=GOOGLE_API_BASE_URL)
+GOOGLE_API_BASE_URL = 'http://maps.google.com'
+GOOGLE_GEOCODE_ENDPOINT = '{base_url}/maps/api/geocode/json'.format(base_url=GOOGLE_API_BASE_URL)

@@ -14,6 +14,7 @@ def get_geo(address):
                                                                sensor=sensor)
 
         response = requests.get(url)
+        response.raise_for_status()
         result = response.json()
         if result['status'] == 'OK':
             lat = str(result['results'][0]['geometry']['location']['lat'])

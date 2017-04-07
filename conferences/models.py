@@ -46,3 +46,7 @@ class Conference(models.Model):
             self.geo_lat = latitude
             self.geo_long = longitude
             self.save()
+
+    def save(self, *args, **kwargs):
+        self.update_coordinate()
+        super(Conference, self).save(*args, **kwargs)
