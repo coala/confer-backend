@@ -1,4 +1,5 @@
 import requests
+from django.conf import settings
 from django.contrib.admin.utils import quote
 
 
@@ -8,7 +9,9 @@ def get_geo(address):
 
         address = quote(address.lower().encode("utf-8"))
         sensor = "false"
-        url = "http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=%s" % (address, sensor)
+        url = '{url}?address={address}&sensor={sensor}'.format(url=settings.GOOGLE_GEOCODE_ENDPOINT,
+                                                               address=address,
+                                                               sensor=sensor)
 
         response = requests.get(url)
         result = response.json()

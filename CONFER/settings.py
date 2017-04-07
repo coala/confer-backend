@@ -114,3 +114,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# GOOGLE API
+
+GOOGLE_API_BASE_URL = 'http://maps.googleapis.com'
+GOOGLE_GEOCODE_ENDPOINT = '{base_url}/maps/api/geocode/'.format(base_url=GOOGLE_API_BASE_URL)

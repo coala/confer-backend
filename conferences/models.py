@@ -22,6 +22,7 @@ class Conference(models.Model):
     cfp_closes = models.DateTimeField(null=True, blank=True)
     finaid_closes = models.DateTimeField(null=True, blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
+    logo_url = models.CharField(max_length=512, null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
