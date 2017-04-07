@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.urls import reverse
 
 from .utils import get_geo
 
@@ -36,6 +37,10 @@ class Conference(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def resource_link(self):
+        return reverse('conferences-detail', args=[self.pk])
 
     def update_coordinate(self, address=None):
         if address:
