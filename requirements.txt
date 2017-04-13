@@ -1,6 +1,7 @@
-django
-djangorestframework
-markdown
-django-filter
-requests
-django-cors-headers
+django==1.11
+djangorestframework==3.6.2
+markdown==2.6.8
+django-filter==1.0.2
+requests==2.13.0
+django-cors-headers==2.0.2
+social-auth-app-django==1.1.0
